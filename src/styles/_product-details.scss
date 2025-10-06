@@ -1,0 +1,648 @@
+
+
+.product-details{
+    
+    // padding: 4rem;
+    padding: 2rem 2rem;
+
+>main {
+    display: flex;
+    max-width: 1920px;
+    width: 100%;
+    margin: auto;
+
+    >section {
+    
+    // border: 1px solid rgba(31, 31, 0, 0.351);
+    // min-height: 80vh;
+    min-height: 60vh;
+    width: 100%;
+
+    &:first-of-type{
+        width: 40%;
+        height: 75vh;
+        height: auto;
+    }
+    &:last-of-type{
+        width: 60%;
+        min-height: 80vh;
+        // border: 1px solid rgba(31,31,31,0.351);
+        min-height: 80vh;
+        padding: 4rem;
+       .product_heading, h1{
+            font-size: 1.5rem;
+            margin: 1rem 0;
+            font-family: 'Press Start 2P', monospace;
+        }
+        code{
+            background: $color2;
+            color: white;
+            border-radius: 10px;
+            padding: 0.25rem;
+            font-family: 'Monoton', cursive;
+        }
+        h3{
+            font-size: 1.5rem;
+            margin: 1rem 0;
+            color: black;
+            
+        }
+        h4{
+          font-size: 1rem;
+          font-weight: 400;
+        }
+        p{
+            font-size: 1rem;
+            margin: 1rem 0;
+            font-weight: 300;
+            max-width: 80%;
+            font-family: 'Monoton', cursive;
+        }
+        article{
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin: 2rem 0;
+            align-items: flex-start;
+            font-family: 'Monoton', cursive;
+            >div{
+                 border: 1px solid rgba(0,0,0,0.1);
+                 width: 9.5rem;
+    @include flex(row, space-between );
+    span{
+        font-size: 1.3rem;
+    }
+    button{
+      border: none;
+     
+      @include square(3rem);
+      border-radius: 5px;
+      @include flex;
+      cursor: pointer;
+      font-size: 1.2rem;
+      &:hover{
+        background-color: $color2;
+        color: $color1;
+      }
+    }
+    }
+    >button{
+        width: 9.5rem;
+      background-color: $color3;
+      padding: 0.75rem;
+      border: none;
+      color: $color1;
+      cursor: pointer;
+      @include flex;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      border-radius: 5px;
+      &:hover{
+        opacity: 0.8;
+      }
+    }
+    }
+    }
+}}}
+
+
+> section{
+  max-width: 1920px;
+  width: 100%;
+  margin: auto;
+}
+
+.carousel_item{
+    background-color:"rgba(0,0,0,0.5)";
+    color: "white";
+    border-radius:"10px";
+    padding:"0.5rem";
+    border:"none";
+    cursor: pointer;
+    display:"grid";
+    place-items:"center";
+}
+
+
+.review{
+  position: relative;
+  // width: 45rem;
+  flex: none;
+  background-color: rgb(244,244,244);
+  padding: 1rem;
+  border-radius: 1rem;
+  margin: 1rem 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1rem;
+  p{
+    font-size: 1.2rem;
+    font-weight: 300;
+  }
+
+  > div {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    img{
+      width: 2rem;
+      height: 2rem;
+      border-radius: 50%;
+    }
+    small{
+      color: $color3;
+    }
+  }
+  > button{
+    position: absolute;
+    top: -0.5rem;
+    right: -0.5rem;
+    background-color: rgb(29,29,29);
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 2rem;
+    height: 2rem;
+    display: grid;
+    place-items: center;
+    font-size: 1.05rem;
+  }
+}
+
+
+.select_size {
+  display: flex;
+  // flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 1rem;
+  gap: 0.75rem;
+
+  h2 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 0;
+    white-space: nowrap; // 👈 Prevent breaking
+  }
+
+  .selected_size {
+    width: 100%;
+    max-width: 300px; // 👈 Fits nicely on mobile
+    padding: 0.5rem;
+    font-size: 1rem;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    align-items: center;
+    
+  }
+
+  p {
+    font-size: 1rem;
+    color: #444;
+    margin: 0;
+  }
+  option {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+}
+
+
+ @media screen and (width>= 951px) {
+  .setsize img {
+  width: 100%; // or a fixed value like 300px
+  height: auto; // maintain aspect ratio
+  object-fit: inherit;
+  object-fit: contain important;
+   
+ }}
+
+
+
+  @media screen and (width<= 950px) {
+
+  .product-details{
+
+    > main{
+      flex-direction: column;
+    >section{
+      &:last-of-type{
+        flex-direction: column;
+        display: flex;
+        
+        article{
+          
+          width: 100%; // Ensure full width
+        box-sizing: border-box;
+        align-items: center;
+        }
+      }
+    }
+     .setsize img {
+  width: 100%; // or a fixed value like 300px
+  // height: auto; // maintain aspect ratio
+  max-height: 100%;
+  object-fit: inherit;
+  object-fit: contain !important;
+  height: 100% !important;
+  display: block;
+  margin: 0 auto;
+  
+}
+    img {
+      max-width: 100%;
+      height: auto;
+      object-fit: inherit;
+      display: block;
+      margin: 0 auto; // Center the image
+      
+     
+    }    
+    
+  }}}
+
+
+
+  @media (max-width: 780px) {
+
+     html, body {
+    overflow-x: hidden;
+  }
+
+    .container {
+    width: 100%;
+    padding: 0 1rem;
+    box-sizing: border-box;
+    overflow-x: hidden;
+  }
+
+  .select_size {
+    display: flex;
+  flex-direction: column;
+  align-items: center;
+    // background-color: #444;
+   width: 40%;
+  max-width: 300px;
+  font-size: 1rem;
+  padding: 0.5rem;
+  border-radius: 4px;
+  
+  text-align: center;
+  // white-space: nowrap;
+  box-sizing: border-box;
+
+}
+.selected_size{
+  border: 1px solid #f8f7f7;
+  // background-color: #7E57C2;
+  background-color: #7E57C2;
+  color: #444;
+  align-items: center;
+  text-align: center;
+}}
+
+.setsize{
+  aside{
+    // border: 5px solid red;
+    flex-wrap: nowrap !important;
+    display:flex;
+    gap:1rem; 
+    overflow-x:auto;
+  }
+}
+
+.size-selector {
+  margin: 1.5rem 0;
+
+  &__title {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    color: #333;
+  }
+
+  &__options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  &__option {
+    padding: 0.5rem 1rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background-color: #fff;
+    font-size: 0.875rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+
+    &:hover {
+      border-color: #999;
+    }
+
+    &.selected {
+      background-color: #f0f0f0;
+      border-color: #333;
+      font-weight: 600;
+    }
+  }
+
+  &__note {
+    margin-top: 0.5rem;
+    font-size: 0.875rem;
+    color: #555;
+  }
+}
+
+
+
+//Accordion
+
+.product-info-accordion {
+  // border: 10px solid black;
+  margin-top: 2rem;
+  .accordion {
+    border-bottom: 1px solid #e2e2e2;
+    padding: 1rem 0;
+
+    &__title {
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    &__content {
+      margin-top: 0.5rem;
+      color: #555;
+      font-size: 0.9rem;
+    }
+  }
+}
+
+
+
+.product-info-accordion {
+  margin-top: 1rem;
+
+  .accordion {
+    border-bottom: 1px solid #ccc;
+    padding: 1rem 0;
+
+    &__button {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: 600;
+      font-size: 1rem;
+      background: none;
+      border: none;
+      text-align: left;
+      cursor: pointer;
+      color: #222;
+
+      &:hover {
+        color: #000;
+      }
+
+      span {
+        font-size: 1.25rem;
+        transition: transform 0.2s ease;
+      }
+    }
+
+    &__content {
+      margin-top: 0.75rem;
+      padding: 1rem;
+      background-color: #f7f7f7; // soft grey background
+      border-radius: 6px;
+      font-size: 0.875rem;
+      color: #444;
+      animation: fadeIn 0.3s ease-in-out;
+    }
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+.product-info-accordion > p {
+  p{
+  text-transform: lowercase; // Makes all letters lowercase
+  font-size: 1rem;
+
+  &::first-letter {
+    text-transform: uppercase; // Capitalizes the first letter
+  }
+  }
+}
+
+
+
+//REVIEW
+.product-details{
+  > section{
+    > article {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      >h2{
+        @include heading;
+      }
+    
+    > button {
+      background-color: black;
+      font-size: 1.25rem;
+      border: none;
+      color: white;
+      border-radius: 50%;
+      cursor: pointer;
+      width: 3rem;
+      height: 3rem;
+      display: grid;
+      place-items: center;
+    }}
+}}
+
+.review-dialog{
+  width: 30rem;
+  top: 50%;
+  border: none;
+  border-radius: 0.5rem;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: relative;
+  padding: 2rem;
+
+  > button{
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    background-color: rgb(29,29,29);
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 2rem;
+    height: 2rem;
+    display: grid;
+    place-items: center;
+    font-size: 1.25rem;
+  }
+
+  >h2{
+    @include heading;
+  }
+
+  >form{
+    margin: 1rem 0;
+    @include flex(column);
+    > textarea{
+      padding: 1rem;
+      border: 1px solid rgb(29,29,29);
+      border-radius: 5px;
+      width: 100%;
+      min-height: 25vh;
+      font-size: 1.2rem;
+    }
+    >button{
+      width: 100%;
+      background-color: rgb(29,29,29);
+      color: white;
+      border: none;
+      cursor: pointer;
+      padding: 1rem;
+      border-radius: 5px;
+      font-size: 1.2rem;
+      &:hover{
+
+      }
+    }
+  }
+}
+
+
+
+
+//LAST ADDED REVIEW CARD VIEW
+.reviews-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 1rem;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* Optional: style inside ReviewCard */
+.review-card {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  padding: 1rem;
+  font-size: 1rem;
+  line-height: 1.6;
+  word-break: break-word;
+  width: 100%;
+  max-width: 100%;
+}
+@media (max-width: 480px) {
+  .reviews-container {
+    padding: 0.5rem;
+    gap: 1rem;
+  }
+
+  .review-card {
+    padding: 0.75rem;
+    font-size: 0.9rem;
+  }
+}
+.review-card {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  padding: 1rem;
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  position: relative;
+}
+.delete-button {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  z-index: 1;
+}
+.reviews-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+  overflow-y: auto;
+  max-height: 100vh;
+  box-sizing: border-box;
+}
+@media (max-width: 480px) {
+  .review-card {
+    padding: 0.75rem;
+    font-size: 0.9rem;
+  }
+
+  .delete-button {
+    top: 0.25rem;
+    right: 0.25rem;
+  }
+
+  .reviews-container {
+    padding: 0.5rem;
+  }
+}
+
+
+.home-btn {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #000000;
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 500;
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    background-color: #443e3e;
+    transform: translateY(-1px);
+  }
+
+  svg {
+    color: #fff;
+    font-size: 20px;
+  }
+}

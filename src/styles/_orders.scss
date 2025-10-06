@@ -1,0 +1,213 @@
+.badge-success {
+  background-color: #F37254;
+  color: white;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+}
+
+
+.receipt-link {
+  color: #F37254;
+  font-size: 0.75rem;
+  text-decoration: underline;
+  margin-left: 0.5rem;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+
+
+
+
+
+
+.orders-container {
+  padding: 1rem 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+
+  h1 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: #2c3e50;
+    text-transform: uppercase;
+    font-weight: 300;
+  }
+
+  .home-btn {
+    background-color: rgba(0, 0, 0, 0.908);
+    border: none;
+    color: #2c3e50;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    cursor: pointer;
+  }
+
+  .order-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+
+  .order-card {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  }
+
+  .order-header {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 0.5rem;
+
+    .order-id {
+      font-family: monospace;
+      font-size: 0.9rem;
+    }
+
+    .order-status {
+      padding: 0.3rem 0.6rem;
+      border-radius: 4px;
+      font-weight: 600;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+    }
+
+    .red {
+      background-color: #ffe5e5;
+      color: #c0392b;
+    }
+
+    .green {
+      background-color: #e5ffe5;
+      color: #27ae60;
+    }
+
+    .purple {
+      background-color: #f3e5ff;
+      color: #8e44ad;
+    }
+
+    .gray {
+      background-color: #eee;
+      color: #666;
+    }
+  }
+
+  .payment-info {
+    margin-bottom: 0.5rem;
+
+    .badge-success {
+      background-color: #d4edda;
+      color: #155724;
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+      font-size: 0.75rem;
+    }
+
+    .receipt-link {
+      margin-left: 0.5rem;
+      font-size: 0.75rem;
+      color: #F37254;
+      text-decoration: underline;
+
+      &:hover {
+        color: #d35400;
+      }
+    }
+  }
+
+  .product-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+
+    .product-item {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.9rem;
+      color: #333;
+    }
+  }
+
+  .order-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 0.5rem;
+
+    .order-total {
+      font-weight: 600;
+      font-size: 1rem;
+    }
+
+    .manage-link {
+      background-color: #2c3e50;
+      color: #fff;
+      padding: 0.4rem 0.8rem;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      text-decoration: none;
+
+      &:hover {
+        background-color: #1a252f;
+      }
+    }
+  }
+}
+
+
+td {
+  user-select: text;
+}
+
+td[data-column-id="orderId"] {
+  font-family: monospace;
+  white-space: nowrap;
+  cursor: text;
+}
+
+
+.order-help {
+  margin-top: 0.75rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid #eee;
+
+  p {
+    font-size: 0.85rem;
+    color: #555;
+    line-height: 1.4;
+    margin-bottom: 0.25rem;
+
+    .contact-link {
+      color: #007bff;
+      text-decoration: underline;
+
+      &:hover {
+        text-decoration: none;
+        color: #0056b3;
+      }
+    }
+  }
+
+  .copy-order-id {
+    font-size: 0.85rem;
+    margin-top: 0.25rem;
+
+    span {
+      user-select: all;
+      background-color: #f5f5f5;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-family: monospace;
+      cursor: text;
+      display: inline-block;
+    }
+  }
+}

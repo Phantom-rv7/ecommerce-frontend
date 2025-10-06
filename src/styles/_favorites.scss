@@ -1,0 +1,214 @@
+.favorites-container {
+  padding: 2rem;
+  max-width: 800px;
+  margin: auto; font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+
+  h1 {
+    // text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    font-weight: 300;
+    text-transform: uppercase;
+  }
+
+  p {
+    white-space: nowrap;
+    font-size: 1.2rem;
+    color: #777;
+  }
+}
+
+.favorites-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.favorite-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.3s ease;
+
+  &:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  }
+
+  &__image {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 6px;
+  }
+
+  &__details {
+    flex: 1;
+
+    h4 {
+      margin: 0 0 0.5rem;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #333;
+    }
+
+    p {
+      margin: 0.25rem 0;
+      font-size: 1rem;
+      color: #555;
+    }
+
+    .price {
+      color: #ff4d4d;
+      font-weight: bold;
+    }
+  }
+
+  .buy-now-btn {
+    padding: 0.6rem 1.2rem;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #fff;
+    background: linear-gradient(135deg, #ff4d4d, #ff1a75);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(255, 77, 77, 0.3);
+
+    &:hover {
+      background: linear-gradient(135deg, #e6005c, #cc0044);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(255, 77, 77, 0.4);
+    }
+
+    &:active {
+      transform: scale(0.98);
+      box-shadow: 0 2px 8px rgba(255, 77, 77, 0.2);
+    }
+  }
+}
+
+
+.favorites-container {
+  padding: 2rem;
+
+  h1 {
+    margin-bottom: 2rem;
+    font-size: 2rem;
+  }
+
+  .favorites-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .favorite-item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+
+    &.removing {
+      opacity: 0;
+      transform: translateX(-20px);
+      pointer-events: none;
+    }
+
+    &__image {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 6px;
+    }
+
+    &__details {
+      flex: 1;
+
+      h4 {
+        margin: 0;
+        font-size: 1.2rem;
+      }
+
+      .price {
+        font-weight: bold;
+        color: #ff4d4d;
+      }
+    }
+
+    .buy-now-btn {
+      padding: 0.5rem 1rem;
+      background-color: #056be0;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: #034bb5;
+      }
+    }
+
+    .remove-favorite-btn {
+      position: absolute;
+      top: 0.3rem;
+      right: 0.5rem;
+      background: transparent;
+      border: none;
+      font-size: 1.37rem;
+      color: #e53935;
+      cursor: pointer;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: #b71c1c;
+      }
+    }
+  }
+}
+
+
+
+// FAVORITE ICON LOGO
+.favorite-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  top: 2.5rem;
+  right: 1rem;
+  z-index: 10;
+
+  svg {
+    font-size: 2.4rem; // 🔥 Bigger icon
+    color: #ccc;
+    transition: all 0.3s ease;
+
+    // Add a bold border effect using drop-shadow
+    filter: drop-shadow(0 0 1px #000000);
+
+    &:hover {
+      color: #ff4d4d;
+      transform: scale(1.2);
+      filter: drop-shadow(0 0 2px #ff4d4d); // 💥 Thicker border glow
+    }
+
+    &.active {
+      color: #ff4d4d;
+      filter: drop-shadow(0 0 2px #ff4d4d); // 💥 Thicker border glow
+    }
+  }
+}
+
+
+

@@ -1,0 +1,73 @@
+.describe-details {
+  padding: 2rem 1rem;
+  border-bottom: 1px solid #e0e0e0;
+  scroll-margin-top: 80px; // helpful for smooth scroll offset if header is fixed
+ 
+  h1{
+    font-size: 1.5rem;
+    font-weight: 600;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    
+  }
+ 
+  h2 {
+    font-size: 1.35rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #222;
+    font-weight: 600;
+  }
+
+  p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #444;
+
+    strong {
+      color: #000;
+      font-weight: 600;
+    }
+
+    br {
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  // Optional: add subtle animation when section scrolls into view
+  @media (prefers-reduced-motion: no-preference) {
+    animation: fadeInUp 0.4s ease-out;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Responsive tweaks
+@media (min-width: 768px) {
+  .describe-details {
+    padding: 3rem 2rem;
+    
+    h1{
+      font-size: 1.4rem;
+    }
+
+     h2 {
+      font-size: 1.25rem;
+    }
+
+    p {
+      font-size: 1.05rem;
+    }
+  }
+}

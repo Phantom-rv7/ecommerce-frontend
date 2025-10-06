@@ -1,0 +1,43 @@
+.fashion-loader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  height: 100vh;
+  background-color: #fff;
+
+  p {
+    margin-top: 1rem;
+    font-size: 1rem;
+    color: #444;
+    font-weight: 500;
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+.hanger {
+  width: 60px;
+  height: 60px;
+  border-top: 4px solid black;
+  border-radius: 50% 50% 0 0;
+  position: relative;
+  animation: spin 1.2s linear infinite;
+}
+
+.tshirt {
+  width: 40px;
+  height: 40px;
+  background-color: black;
+  border-radius: 6px;
+  position: absolute;
+  top: 12px;
+  left: 10px;
+  transform: rotate(15deg);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
