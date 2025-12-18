@@ -1,0 +1,1 @@
+import{l as i,u,f as l,r as c,V as f}from"./index-CC-10JTR.js";const d=()=>{const{user:e,loading:s}=i(a=>a.userReducer),n=u(),t=l(),r=c.useRef(!1),o=!!(e!=null&&e._id);return c.useEffect(()=>{const a=t.pathname==="/login";!s&&!o&&!r.current&&!a&&(r.current=!0,f.error("Please login to continue...."),n("/login",{state:{from:t.pathname},replace:!0}))},[o,s,n,t]),o};export{d as u};
