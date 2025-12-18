@@ -44,10 +44,13 @@ const Discount = () => {
     const {user} = useSelector(
         (state:{userReducer:UserReducerInitialState}) => state.userReducer);
 
-    const { data, loading:isLoading, error } = useFetchData<AllDiscountResponse>({
-      url: `${server}/api/v1/payment/coupon/all?id=${user?._id}`,
-      key: "discount-codes",
-    }); 
+    const { data, loading: isLoading, error } = useFetchData<AllDiscountResponse>({
+  url: user?._id ? `${server}/api/v1/payment/coupon/all?id=${user._id}` : "",
+  key: "discount-codes",
+  dependencyProps: user?._id ? [user._id] : [],
+});
+
+
 
      const [rows, setRows] = useState<DataType[]>([]);
 

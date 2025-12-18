@@ -26,11 +26,6 @@ const Home = () => {
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-  const [sort, setSort] = useState("");
-  const [category, setCategory] = useState("");
-  const queryParams = new URLSearchParams(location.search);
-  const categoryFromURL = queryParams.get("category") || "";
-  const sortFromURL = queryParams.get("sort") || "";
 
   const handleCollectionClick = (gender: string) => {
   const defaultSort = "asc"; // or "dsc" if you prefer high-to-low
@@ -43,12 +38,6 @@ const Home = () => {
     }, 5000);
     return () => clearInterval(interval)
   }, []);
-
-  useEffect(() => {
-  setCategory(categoryFromURL);
-  setSort(sortFromURL);
-}, [categoryFromURL, sortFromURL]);
-
 
 
   const addToCardHandler = (cartItem: CartItem) => {
@@ -101,35 +90,7 @@ const Home = () => {
           More
         </Link>
       </h1>
-
-
-      {/* <div className="product-scroll-wrapper">
-        <button className="scroll-arrow left" onClick={() => scrollRef.current?.scrollBy({ left: -300, behavior: "smooth" })}>
-            &#8592;
-        </button>
-      <main className="product-scroll">
-        {isLoading ? (
-          <Skeleton width="80vw" />
-        ) : (
-          data?.products.map((i) => (
-            <ProductCard
-              key={i._id}
-              productId={i._id}
-              name={i.name}
-              price={i.price}
-              stock={i.stock}
-              materialType={i.materialType}
-              size={i.size}
-              handler={addToCardHandler}
-              photos={i.photos}
-            />
-          ))
-        )}
-      </main>
-       <button className="scroll-arrow right" onClick={() => scrollRef.current?.scrollBy({ left: 300, behavior: "smooth" })}>
-    &#8594;
-  </button>
-  </div> */}
+      
 
   <div className="product-scroll-wrapper">
     <button
@@ -256,6 +217,23 @@ const Home = () => {
         </div>
       </section>
 
+      <section className="event-collection">
+  <h2>Event Merch</h2>
+  <div className="collection-grid">
+    <div className="collection-card event">
+      <img src="event.jpg" alt="Event Apparel" />
+      <div className="collection-info">
+        <h3>Custom Event Wear</h3>
+        <p>Printed T-shirts & Hoodies for College Fests, Club Programs, and Team Events.</p>
+        <Link to="/search?category=event" className="view-btn">
+          Explore Designs
+        </Link>
+      </div>
+    </div>
+  </div>
+</section>
+
+
       <section className="premium-highlight">
         <div className="premium-section">
           <img src="RR.jpg" alt="Premium Picks" className="premium-image" />
@@ -275,7 +253,9 @@ const Home = () => {
     <CustomDesignCTA />
   </section>
 
-  <footer className="footer">
+
+
+<footer className="footer">
     <div className="footer-columns">
       <div className="footer-column">
         <h3 style={{fontFamily:"'Dancing Script', cursive"}}>Retro Revival</h3>

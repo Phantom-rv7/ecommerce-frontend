@@ -57,11 +57,12 @@ const Cart = () => {
             
             dispatch(calculatePrice())
           })
-          .catch((e) => {
+          .catch(() => {
             dispatch(discountApplied(0))
             setIsValidCouponCode(false);
             dispatch(calculatePrice())
           })
+
 
         if(Math.random() > 0.5) setIsValidCouponCode(true);
         else setIsValidCouponCode(false);
@@ -82,20 +83,6 @@ const Cart = () => {
   
   return (
     <div className="cart">
-      {/* <main>
-        {cartItems.length > 0 ? ( 
-          cartItems.map((i,idx) =>
-            <CartItemCard 
-              incrementHandler={incrementHandler} 
-              decrementHandler={decrementHandler} 
-              removerHandler={removerHandler} 
-              key = {idx} 
-              cartItem={i}/>)
-              
-      ) : ( 
-        <h1>No Items Added</h1>
-      )}
-      </main> */}
       <main>
   {cartItems.length > 0 ? (
     <>

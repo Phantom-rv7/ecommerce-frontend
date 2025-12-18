@@ -1,27 +1,25 @@
-import toast from "react-hot-toast";
 import { useSelector } from "react-redux";
+import { Navigate } from "react-router-dom";
 import AdminSidebar from "../../../components/admin/AdminSidebar";
 import { DoughnutChart, PieChart } from "../../../components/admin/Charts";
+import { Skeleton } from "../../../components/loader";
 import { usePieQuery } from "../../../redux/api/dashboardAPI";
 import { RootState } from "../../../redux/store";
-import { CustomError } from "../../../types/api-types";
-import { Skeleton } from "../../../components/loader";
-import { Navigate } from "react-router-dom";
 
 const PieCharts = () => {
     
   const { user } = useSelector((state:RootState) => state.userReducer);
 
-  const {isLoading, data, isError, error} = usePieQuery(user?._id!);
+  const {isLoading, data, isError } = usePieQuery(user?._id!);
 
   const charts = data?.charts!;
 
-  const order  = data?.charts.orderFullfillment;
-  const categories  = data?.charts.productCategories;
-  const stock = data?.charts.stockAvailability;
-  const revenue  = data?.charts.revenueDistribution;
-  const ageGroup = data?.charts.usersAgeGroup;
-  const adminCustomer = data?.charts.adminCustomer;
+  // const order  = data?.charts.orderFullfillment;
+  // const categories  = data?.charts.productCategories;
+  // const stock = data?.charts.stockAvailability;
+  // const revenue  = data?.charts.revenueDistribution;
+  // const ageGroup = data?.charts.usersAgeGroup;
+  // const adminCustomer = data?.charts.adminCustomer;
 
    if(isError) return <Navigate to={"/admin/dashboard"} />
 

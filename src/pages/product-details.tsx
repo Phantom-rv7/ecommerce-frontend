@@ -113,10 +113,6 @@ const toggleFavorite = async () => {
     if (quantity > 1) setQuantity((prev) => prev - 1);
   };
 
-  const handleSizeChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    setSelectedSize(e.target.value);
-  };
-
   const addToCartHandler = (cartItem: CartItem) => {
     if (cartItem.stock < 1) return toast.error("Out of Stock!");
     dispatch(addToCart(cartItem));

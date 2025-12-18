@@ -1,11 +1,11 @@
-import { ChangeEvent, FormEvent, useState } from "react";
-import AdminSidebar from "../../../components/admin/AdminSidebar";
-import { useSelector } from "react-redux";
-import { UserReducerInitialState } from "../../../types/reducer-types";
-import { useNewProductMutation } from "../../../redux/api/productAPI";
-import { responseToast } from "../../../utils/feautures";
-import { useNavigate } from "react-router-dom";
 import { useFileHandler } from "6pp";
+import { FormEvent, useState } from "react";
+import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import AdminSidebar from "../../../components/admin/AdminSidebar";
+import { useNewProductMutation } from "../../../redux/api/productAPI";
+import { UserReducerInitialState } from "../../../types/reducer-types";
+import { responseToast } from "../../../utils/feautures";
 
 const NewProduct = () => {
   const { user } = useSelector(

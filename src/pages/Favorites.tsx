@@ -87,7 +87,7 @@ const Favorites = () => {
                 <div className="favorite-item__details">
                   <h4>{product.name}</h4>
                   <p className="price">₹{product.price}</p>
-                  <p style={{ fontFamily: "monospace" }}>Don’t wait</p>
+                  <p style={{fontFamily:"monospace"}} className="discount">{product.off}% OFF</p>
                 </div>
                 <Link to={`/product/${product._id}`}>
                   <button className="buy-now-btn">Explore</button>
