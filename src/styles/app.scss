@@ -16,18 +16,18 @@ a {
   color: black;
 }
 
-button{
-  &:disabled{
+button {
+  &:disabled {
     cursor: not-allowed;
     opacity: 0.5;
   }
 }
 
-$color1:white;
-$color2:#1a1a1a;
-$color3:#272626;
+$color1: white;
+$color2: #1a1a1a;
+$color3: #272626;
 
-body{
+body {
   user-select: none;
 }
 
@@ -40,7 +40,6 @@ body{
 .green {
   color: rgb(0, 195, 0);
 }
-
 
 //ALL FILES IMPORTED
 
@@ -68,66 +67,65 @@ body{
 @import "admin-styles/_mediaquery";
 @import "admin-styles/_mangdetails.scss";
 
-
-.container{
+.container {
   max-width: 1367px;
   width: 100%;
   margin: auto;
   overflow: auto;
-  >h1{
+  > h1 {
     @include heading;
     margin: 1rem 0;
     text-align: left;
   }
 }
 
-.heading{
+.heading {
   @include heading;
   margin: 1rem 0;
   text-align: center;
 }
 
-.header{
-  @include flex(row,flex-end,stretch,1.2rem);
+.header {
+  @include flex(row, flex-end, stretch, 1.2rem);
   padding: 1rem;
-  a{
+  a {
     color: $color2;
     letter-spacing: 2px;
     font-size: 1.2rem;
 
-    &:hover{
+    &:hover {
       color: $color3;
     }
   }
-  button{
+  button {
     border: none;
     font-size: 1.2rem;
-    cursor:pointer;
+    cursor: pointer;
     background-color: transparent;
-    &:hover{
-      color:$color3;
+    &:hover {
+      color: $color3;
     }
   }
-  dialog{
+  dialog {
     border: 1px solid #ccc;
     border-radius: 5px;
     padding: 10px;
     width: 100px;
     position: absolute;
-    left:calc(100% - 100px);
+    left: calc(100% - 100px);
     top: 8%;
-    >div{
-      @include flex(column,flex-start,center,0.25rem);
+    > div {
+      @include flex(column, flex-start, center, 0.25rem);
       position: fixed;
-    z-index: 9999;
-    background-color: white;
-    padding: 1rem;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      z-index: 9999;
+      background-color: white;
+      padding: 1rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     }
   }
 }
 
-.not-found{
+.not-found {
   @include flex(column);
   height: 80vh;
   > svg {
@@ -135,21 +133,20 @@ body{
   }
 }
 
-.checkout-container{
+.checkout-container {
   max-width: 400px;
   width: 100%;
   margin: auto;
-  > form{
+  > form {
     @include flex(column, flex-start, stretch, 2rem);
 
-    > button{
+    > button {
       @include btn(1rem, $color3, $color1);
       width: 100%;
       font-size: 1.1rem;
     }
   }
 }
-
 
 .admin-container {
   @include grid(1fr 4fr, 2rem);
@@ -219,8 +216,6 @@ body{
         height: 4rem;
         object-fit: contain;
         border-radius: 10px;
-        
-        
       }
       a {
         text-decoration: none;
@@ -317,12 +312,12 @@ body{
   }
 }
 
-.skeleton-loader{
+.skeleton-loader {
   display: flex;
   flex-direction: column;
 }
 
-.skeleton-shape{
+.skeleton-shape {
   height: 30px;
   width: 100%;
   background-color: #ddd;
@@ -354,8 +349,6 @@ body{
   }
 }
 
-
-
 .pagination-controls {
   display: flex;
   justify-content: center;
@@ -372,15 +365,6 @@ body{
   }
 }
 
-
-
-
-
-
 html {
   scroll-behavior: smooth;
 }
-
-
-
-

@@ -26,11 +26,6 @@ const Home = () => {
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-  const [sort, setSort] = useState("");
-  const [category, setCategory] = useState("");
-  const queryParams = new URLSearchParams(location.search);
-  const categoryFromURL = queryParams.get("category") || "";
-  const sortFromURL = queryParams.get("sort") || "";
 
   const handleCollectionClick = (gender: string) => {
   const defaultSort = "asc"; // or "dsc" if you prefer high-to-low
@@ -43,12 +38,6 @@ const Home = () => {
     }, 5000);
     return () => clearInterval(interval)
   }, []);
-
-  useEffect(() => {
-  setCategory(categoryFromURL);
-  setSort(sortFromURL);
-}, [categoryFromURL, sortFromURL]);
-
 
 
   const addToCardHandler = (cartItem: CartItem) => {
@@ -101,35 +90,7 @@ const Home = () => {
           More
         </Link>
       </h1>
-
-
-      {/* <div className="product-scroll-wrapper">
-        <button className="scroll-arrow left" onClick={() => scrollRef.current?.scrollBy({ left: -300, behavior: "smooth" })}>
-            &#8592;
-        </button>
-      <main className="product-scroll">
-        {isLoading ? (
-          <Skeleton width="80vw" />
-        ) : (
-          data?.products.map((i) => (
-            <ProductCard
-              key={i._id}
-              productId={i._id}
-              name={i.name}
-              price={i.price}
-              stock={i.stock}
-              materialType={i.materialType}
-              size={i.size}
-              handler={addToCardHandler}
-              photos={i.photos}
-            />
-          ))
-        )}
-      </main>
-       <button className="scroll-arrow right" onClick={() => scrollRef.current?.scrollBy({ left: 300, behavior: "smooth" })}>
-    &#8594;
-  </button>
-  </div> */}
+      
 
   <div className="product-scroll-wrapper">
     <button

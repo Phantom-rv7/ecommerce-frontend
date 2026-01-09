@@ -1,6 +1,6 @@
 import { FaTrash } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import { server } from "../redux/store";
+
 import { CartItem as CartItem1 } from "../types/types";
 import { transformImage } from "../utils/feautures";
 
@@ -18,7 +18,7 @@ const CartItem = ({
   removerHandler
  } : CartItemProps) => {
 
-  const {photo, productId, name, price, quantity, materialType,size, fakePrice,off , color, gsm, pocket} = cartItem;
+  const {photo, productId, name, price, quantity, materialType,size } = cartItem;
   
 
   return (

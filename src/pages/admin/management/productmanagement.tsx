@@ -21,7 +21,7 @@ const Productmanagement = () => {
   const params = useParams();
   const navigate = useNavigate();
 
-  const { data, isLoading, isError, error } = useProductDetailsQuery(params.id!);
+  const { data, isLoading, isError } = useProductDetailsQuery(params.id!);
 
   const [btnLoading, setBtnLoading] = useState<boolean>(false);
   const [updateProduct] = useUpdateProductMutation();
@@ -154,9 +154,14 @@ const Productmanagement = () => {
             )}
 
             <article>
-              <button className="product-delete-btn" onClick={deleteHandler}>
-                <FaTrash />
+              <button 
+                className="product-delete-btn" 
+                onClick={deleteHandler} 
+                disabled={deleteLoading}
+              >
+                {deleteLoading ? "Deleting..." : <FaTrash />}
               </button>
+
 
               <form onSubmit={submitHandler}>
                 <h2>Manage</h2>

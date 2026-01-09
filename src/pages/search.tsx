@@ -145,23 +145,28 @@ useEffect(() => {
 
           <div className="filter-block">
             <h4>Category</h4>
-            <Select
-              options={categoryOptions}
-              value={categoryOptions.find((opt) => opt.value === category)}
-              onChange={(selected) => setCategory(selected?.value || "")}
-              placeholder="Select Category"
-              isSearchable
-              styles={{
-                container: (base) => ({ ...base, width: "100%" }),
-                control: (base) => ({
-                  ...base,
-                  borderRadius: "6px",
-                  borderColor: "#ccc",
-                  padding: "2px",
-                }),
-              }}
-            />
+            {loadingCategories ? (
+              <Skeleton length={5} /> 
+            ) : (
+              <Select
+                options={categoryOptions}
+                value={categoryOptions.find((opt) => opt.value === category)}
+                onChange={(selected) => setCategory(selected?.value || "")}
+                placeholder="Select Category"
+                isSearchable
+                styles={{
+                  container: (base) => ({ ...base, width: "100%" }),
+                  control: (base) => ({
+                    ...base,
+                    borderRadius: "6px",
+                    borderColor: "#ccc",
+                    padding: "2px",
+                  }),
+                }}
+              />
+            )}
           </div>
+
 
           <div className="filter-block" >
             <h4>Style Preference</h4>

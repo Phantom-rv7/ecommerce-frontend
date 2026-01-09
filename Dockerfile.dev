@@ -1,0 +1,17 @@
+# ecommerce-frontend/Dockerfile.dev
+FROM node:22-slim
+
+WORKDIR /app
+
+# Install dependencies
+COPY package*.json ./
+RUN npm install --legacy-peer-deps
+
+# Copy source
+COPY . .
+
+# Expose Vite dev server
+EXPOSE 5173
+
+# Run Vite dev server (hot reload, not for production)
+CMD ["npm", "run", "dev", "--", "--host", "0.0.0.0", "--port", "5173"]

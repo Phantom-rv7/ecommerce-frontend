@@ -1,10 +1,7 @@
-# Ignore environment variables (real secrets)
+# Ignore environment variables
 .env
 
-# Allow example template
-!.env.example
-
-# Dependencies and build output
+# Ignore dependencies and build output
 node_modules/
 dist/
 dist-ssr

@@ -1,7 +1,6 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { useLatestProductsQuery } from "../redux/api/productAPI"
-import { Skeleton } from "../components/loader"
+import { Skeleton } from "../components/loader";
 
 
 const DescribeDetails = () => {
@@ -16,7 +15,15 @@ const DescribeDetails = () => {
   const returnsRef = useRef<HTMLDivElement>(null);
   const shippingRef = useRef<HTMLDivElement>(null);
 
-  const { data, isLoading } = useLatestProductsQuery("")
+
+   const [isLoading, setIsLoading] = useState(true);
+
+
+  useEffect(() => {
+    // simulate loading for 1 second
+    const timer = setTimeout(() => setIsLoading(false), 1000);
+    return () => clearTimeout(timer);
+  }, []);
  
 
   useEffect(() => {
