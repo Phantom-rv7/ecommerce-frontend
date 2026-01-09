@@ -6,14 +6,7 @@
   padding: 2rem;
   height: 100vh;
   background-color: #fff;
-
-  p {
-    margin-top: 1rem;
-    font-size: 1rem;
-    color: #444;
-    font-weight: 500;
-    font-family: 'Inter', sans-serif;
-  }
+  position: relative;
 }
 
 .hanger {
@@ -22,7 +15,7 @@
   border-top: 4px solid black;
   border-radius: 50% 50% 0 0;
   position: relative;
-  animation: spin 1.2s linear infinite;
+  animation: spin 1.2s linear infinite; /* hanger spins */
 }
 
 .tshirt {
@@ -35,9 +28,28 @@
   left: 10px;
   transform: rotate(15deg);
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tshirt-text {
+  color: white;
+  font-weight: bold;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+
+  /* counteract parent's rotation so text stays upright */
+  animation: spinReverse 1.2s linear infinite;
 }
 
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
+}
+
+@keyframes spinReverse {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(-360deg); }
 }

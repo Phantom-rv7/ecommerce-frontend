@@ -256,6 +256,23 @@ const Home = () => {
         </div>
       </section>
 
+      <section className="event-collection">
+  <h2>Event Merch</h2>
+  <div className="collection-grid">
+    <div className="collection-card event">
+      <img src="event.jpg" alt="Event Apparel" />
+      <div className="collection-info">
+        <h3>Custom Event Wear</h3>
+        <p>Printed T-shirts & Hoodies for College Fests, Club Programs, and Team Events.</p>
+        <Link to="/search?category=event" className="view-btn">
+          Explore Designs
+        </Link>
+      </div>
+    </div>
+  </div>
+</section>
+
+
       <section className="premium-highlight">
         <div className="premium-section">
           <img src="RR.jpg" alt="Premium Picks" className="premium-image" />
@@ -275,7 +292,9 @@ const Home = () => {
     <CustomDesignCTA />
   </section>
 
-  <footer className="footer">
+
+
+<footer className="footer">
     <div className="footer-columns">
       <div className="footer-column">
         <h3 style={{fontFamily:"'Dancing Script', cursive"}}>Retro Revival</h3>

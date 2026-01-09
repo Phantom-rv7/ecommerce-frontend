@@ -208,6 +208,7 @@ export interface ProductType {
   name: string;
   price: number;
   photos: { url: string }[];
+  off:number;
   // add other fields if needed
 }
 

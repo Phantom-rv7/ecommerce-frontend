@@ -2,7 +2,8 @@ const Loader = () => {
   return (
     <div className="fashion-loader">
       <div className="hanger">
-        <div className="tshirt"></div>
+        <div className="tshirt">
+        </div>
       </div>
       <p>Loading your Style...</p>
     </div>
@@ -10,6 +11,8 @@ const Loader = () => {
 };
 
 export default Loader;
+
+
 
 
 
